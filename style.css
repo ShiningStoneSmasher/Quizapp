@@ -1,11 +1,21 @@
 body {
-    background-color: blue !important;
+    background-color: rgb(254, 250, 239);
     font-family: 'Rubik', sans-serif;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: blue !important;
+    background-color: rgb(254, 250, 239);
+}
+.left_info_section {
+    background-color: rgb(39,53,92);
+}
+#rubrics {
+    color: white;
+}
+.questions {
+    background-color: rgb(247,247,247);
 }
