@@ -1,5 +1,6 @@
 body {
     background-color: blue !important;
+    font-family: 'Rubik', sans-serif;
 }
 .container {
     display: flex;

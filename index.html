@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizapp</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 
-    <!--bootstrapfiles-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Quizapp</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+
+  <!--bootstrapfiles-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Navbar</span>
-        </div>
-      </nav>
-<div class="container">
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="container">
+    <div class="left_info_section">
+      <div id="main_symbol">
+        <img src="./img" alt="Brain">
+        <h2>QUIZAPP</h2>
+      </div>
+      <div id="rubrics">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JS</span>
+        <span>Java</span>
+      </div>
+      <div class="questions">
+        <span id="question"></span>
+        <div id="answers">
+          <div>
+            <span>A</span>
+            <span>Anwort 1</span>
+          </div>
+          <div>
+            <span>B</span>
+            <span>Anwort 2</span>
+          </div>
+          <div>
+            <span>C</span>
+            <span>Anwort 3</span>
+          </div>
+          <div>
+            <span>D</span>
+            <span>Anwort 4</span>
+          </div>
         </div>
       </div>
+
     </div>
 
 </body>
+
 </html>
