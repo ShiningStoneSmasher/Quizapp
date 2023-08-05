@@ -29,7 +29,7 @@ body {
     height: 500px;
     display: flex;
     flex-direction: column;
-    
+    max-width: 220px;
 }
 #main_symbol {
     display: flex;
@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 0px;
-    margin-top: 20px;    
+    margin-top: 20px;
 }
 #rubrics span {
     margin-top: 20px;
@@ -67,4 +67,28 @@ body {
     border-bottom-right-radius: 16px;
     width: 50vw;
     height: 500px;
+}
+#background_img {
+    display: flex;
+    object-fit: cover;
+}
+#content {
+    background-color: rgb(247,247,247);
+    font-family: 'PT Sans', sans-serif;
+    background-image: url(./img/brainbg.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+#welcome_line{
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    text-align: center;
+}
+#ready_line{
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
