@@ -80,3 +80,23 @@ let questions = [
         "right_answer": 2
     } 
 ];
+/*
+<span id="question">Frage x</span>
+<div id="answers">
+<div>
+<span>A</span>
+<span>Anwort 1</span>
+</div>
+<div>
+<span>B</span>
+<span>Anwort 2</span>
+</div>
+<div>
+<span>C</span>
+<span>Anwort 3</span>
+</div>
+<div>
+<span>D</span>
+<span>Anwort 4</span>
+</div>
+</div> */

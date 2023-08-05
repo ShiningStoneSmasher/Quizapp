@@ -5,7 +5,7 @@ body {
     padding: 0 !important;
 }
 
-.container {
+.container1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +16,10 @@ body {
     margin-left: 0 !important;
     padding: 0 !important;
 }
+#boxed {
+    display: flex;
+    width: 100%;
+}
 .left_info_section {
     background-color: rgb(39,53,92);
     border-top-left-radius: 16px;
@@ -23,9 +27,39 @@ body {
     margin-left: 50px;
     width: 30vw;
     height: 500px;
+    display: flex;
+    flex-direction: column;
+    
+}
+#main_symbol {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #rubrics {
     color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-top: 20px;    
+}
+#rubrics span {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+#boxed_rubrics {
+    display: flex;
+    align-items: center;
+}
+#rubric_pointer {
+    background-color: white;
+    width: 5px;
+    height: 20px;
+    margin-right: 60px;
+    margin-left: 1px;
 }
 .questions {
     background-color: rgb(247,247,247);
