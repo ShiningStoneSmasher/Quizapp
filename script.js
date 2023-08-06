@@ -110,5 +110,35 @@ function onload() {
 
         <span id="welcome_line">Welcome to<br>The Awesome Programmer-Quiz</span>
         <span id="ready_line">Ready for the Challenge?</span>
+        <button id="start_button" onclick="start_Questions()">START NOW <span>></span></button>
+    `;
+}
+function start_Questions() {
+    let question = document.getElementById('content');
+
+    question.innerHTML = /*html*/ `
+        <span id="question">Frage x</span>
+        <div id="answers">
+            <div>
+                <span>A</span>
+                <span>Anwort 1</span>
+            </div>
+            <div>
+                <span>B</span>
+                <span>Anwort 2</span>
+            </div>
+            <div>
+                <span>C</span>
+                <span>Anwort 3</span>
+            </div>
+            <div>
+                <span>D</span>
+                <span>Anwort 4</span>
+            </div>
+            <div id="back_and_for">
+                <img src="./img/icons8-zurück-30.png" alt="back">
+                <img src="./img/icons8-vorwärts-30.png" alt="next">
+            </div>
+        </div> 
     `;
 }

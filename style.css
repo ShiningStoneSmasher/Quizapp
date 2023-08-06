@@ -61,34 +61,59 @@ body {
     margin-right: 60px;
     margin-left: 1px;
 }
-.questions {
-    background-color: rgb(247,247,247);
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-    width: 50vw;
-    height: 500px;
-}
 #background_img {
     display: flex;
     object-fit: cover;
 }
 #content {
+    position: relative;
     background-color: rgb(247,247,247);
     font-family: 'PT Sans', sans-serif;
     background-image: url(./img/brainbg.jpg);
     background-size: cover;
     background-position: center;
-    
+    margin-right: 50px;
+    width: 70%;    
 }
+
+/*--------------------------Welcome page---------------------------*/
 #welcome_line{
     font-weight: 700;
     font-size: 30px;
     display: flex;
     text-align: center;
+    justify-content: center;
+    margin-top: 130px;
 }
 #ready_line{
     font-weight: 400;
     font-size: 20px;
     display: flex;
     justify-content: center;
+}
+#start_button {
+    position: absolute;
+    bottom: 38px;
+    right: 38px;
+    background-color: rgb(254,78,17);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    height: 38px;
+    width: 180px;
+    font-family: sans-serif;
+}
+#start_button span {
+    
+}
+
+/*--------------------------Question page---------------------------*/
+
+
+.questions {
+    background-color: rgb(247,247,247);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    width: 50vw;
+    height: 500px;
 }
