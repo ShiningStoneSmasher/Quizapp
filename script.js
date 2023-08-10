@@ -83,18 +83,51 @@ let questions = [
 let currentQuestion = 0;
 let rightAnswers = [];
 
-function onload() {
-    let welcome = document.getElementById('content');
+function init() {
+
+    let welcome = document.getElementById('content_for_quest');
 
     welcome.innerHTML = /*html*/ `
 
         <span id="welcome_line">Welcome to<br>The Awesome Programmer-Quiz</span>
         <span id="ready_line">Ready for the Challenge?</span>
-        <button id="start_button" onclick="start_Questions()">START NOW <span>></span></button>
+        <button id="start_button" onclick="startQuestions()">START NOW <span>></span></button>
     `;
 }
-function start_Questions() {
-    let showQuestion = questions[currentQuestion];
+function startQuestions() {
 
-    document.getElementById('first_question').innerHTML = showQuestion['question'];
+    document.getElementById('content_for_quest').innerHTML = /*html*/ `
+        <span id="question" class="questions"></span>
+        <div id="answers">
+            <div id="answer_card">
+                <span id="answer_option">A</span>
+                <span id="answer_1" class="style_answer"></span>
+            </div>
+            <div id="answer_card">
+                <span id="answer_option">B</span>
+                <span id="answer_2" class="style_answer"></span>
+            </div>
+            <div id="answer_card">
+                <span id="answer_option">C</span>
+                <span id="answer_3" class="style_answer"></span>
+            </div>
+            <div id="answer_card">
+                <span id="answer_option">D</span>
+                <span id="answer_4" class="style_answer"></span>
+            </div>
+            <div id="back_and_for">
+                <img src="./img/icons8-zurück-30.png" alt="back">
+                <img src="./img/icons8-vorwärts-30.png" alt="next">
+            </div>
+        </div>
+    `;
+
+    let showQuestion = questions[currentQuestion];
+    
+    document.getElementById('question').innerHTML = showQuestion['question'];
+    document.getElementById('answer_1').innerHTML = showQuestion['answer_1'];
+    document.getElementById('answer_2').innerHTML = showQuestion['answer_2'];
+    document.getElementById('answer_3').innerHTML = showQuestion['answer_3'];
+    document.getElementById('answer_4').innerHTML = showQuestion['answer_4'];
+
 }

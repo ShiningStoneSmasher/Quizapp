@@ -20,6 +20,27 @@ body {
     display: flex;
     width: 100%;
 }
+#background_img {
+    display: flex;
+    object-fit: cover;
+}
+#content_for_quest {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(247,247,247);
+    font-family: 'PT Sans', sans-serif;
+    background-image: url(./img/brainbg.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-right: 50px;
+    width: 70%;    
+}
+
+/*--------------------------Rubrics page---------------------------*/
+
+
 .left_info_section {
     background-color: rgb(39,53,92);
     border-top-left-radius: 16px;
@@ -61,20 +82,8 @@ body {
     margin-right: 60px;
     margin-left: 1px;
 }
-#background_img {
-    display: flex;
-    object-fit: cover;
-}
-#content {
-    position: relative;
-    background-color: rgb(247,247,247);
-    font-family: 'PT Sans', sans-serif;
-    background-image: url(./img/brainbg.jpg);
-    background-size: cover;
-    background-position: center;
-    margin-right: 50px;
-    width: 70%;    
-}
+
+/*--------------------------Rubrics page---------------------------*/
 
 /*--------------------------Welcome page---------------------------*/
 #welcome_line{
@@ -103,14 +112,39 @@ body {
     width: 180px;
     font-family: sans-serif;
 }
+/*--------------------------Welcome page----------------------------*/
 
 /*--------------------------Question page---------------------------*/
-
-
 .questions {
-    background-color: rgb(247,247,247);
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-    width: 50vw;
-    height: 500px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+#answer_option {
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700 !important;
+}
+#answer_card {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-radius: 2px;
+    margin: 20px 0px 20px 0px;
+    background-color: white;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.style_answer {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400 !important;
+}
+
+/*--------------------------Question page---------------------------*/
