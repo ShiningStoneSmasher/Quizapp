@@ -142,6 +142,10 @@ body {
     margin-left: 80px;
     margin-right: 80px;
 }
+#answer_card:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
 .style_answer {
     font-family: 'Rubik', sans-serif;
     font-weight: 400 !important;

@@ -96,26 +96,28 @@ function init() {
 }
 function startQuestions() {
 
+    document.getElementById('content_for_quest').style.backgroundImage = "none";
+
     document.getElementById('content_for_quest').innerHTML = /*html*/ `
         <span id="question" class="questions"></span>
         <div id="answers">
-            <div id="answer_card">
+            <div onclick="proofAnswer('answer_1')" id="answer_card">
                 <span id="answer_option">A</span>
                 <span id="answer_1" class="style_answer"></span>
             </div>
-            <div id="answer_card">
+            <div onclick="proofAnswer('answer_2')" id="answer_card">
                 <span id="answer_option">B</span>
                 <span id="answer_2" class="style_answer"></span>
             </div>
-            <div id="answer_card">
+            <div onclick="proofAnswer('answer_3')" id="answer_card">
                 <span id="answer_option">C</span>
                 <span id="answer_3" class="style_answer"></span>
             </div>
-            <div id="answer_card">
+            <div onclick="proofAnswer('answer_4')" id="answer_card">
                 <span id="answer_option">D</span>
                 <span id="answer_4" class="style_answer"></span>
             </div>
-            <div id="back_and_for">
+            <div onclick="#" id="back_and_for">
                 <img src="./img/icons8-zurück-30.png" alt="back">
                 <img src="./img/icons8-vorwärts-30.png" alt="next">
             </div>
@@ -130,4 +132,19 @@ function startQuestions() {
     document.getElementById('answer_3').innerHTML = showQuestion['answer_3'];
     document.getElementById('answer_4').innerHTML = showQuestion['answer_4'];
 
+}
+function proofAnswer(selectedAnswer){
+    let selectedNumber = +selectedAnswer.slice(-1); // holt das letzte element aus dem string und gibt es aus zahl aus
+    console.log('selectedNumber', selectedNumber);
+
+    let rightAnswer = questions[0]['right_answer']; // holt das erste element des jsons und davon den wert im string "right_answer"
+    console.log('right answer', rightAnswer);
+
+    if (selectedNumber === rightAnswer) {
+        document.getElementById(selectedAnswer).classList.add('bg-success');
+        alert('youre right');
+    } else {
+        alert('youre wrong');
+        document.getElementById(selectedAnswer).classList.add('bg-danger');
+    }
 }
