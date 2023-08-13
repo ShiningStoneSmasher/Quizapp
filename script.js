@@ -117,12 +117,14 @@ function startQuestions() {
                 <span id="answer_option">D</span>
                 <span id="answer_4" class="style_answer"></span>
             </div>
-            <div onclick="#" id="back_and_for">
-                <img src="./img/icons8-zurück-30.png" alt="back">
-                <img src="./img/icons8-vorwärts-30.png" alt="next">
+            <div id="back_and_for">
+                <img onclick="moveBackward()" type="button" id="back_button" src="./img/icons8-zurück-30.png" alt="back">
+                <img onclick="moveForward()" type="button" id="for_button" src="./img/icons8-vorwärts-30.png" alt="next">
             </div>
         </div>
     `;
+    document.getElementById('back_button').style.pointerEvents = 'none'; // deaktiviert die "button" funktion
+    document.getElementById('for_button').style.pointerEvents = 'none'; // deaktiviert die "button" funktion
 
     let showQuestion = questions[currentQuestion];
     
@@ -133,6 +135,7 @@ function startQuestions() {
     document.getElementById('answer_4').innerHTML = showQuestion['answer_4'];
 
 }
+
 function proofAnswer(selectedAnswer){
     let selectedNumber = +selectedAnswer.slice(-1); // holt das letzte element aus dem string und gibt es aus zahl aus
     console.log('selectedNumber', selectedNumber);
@@ -140,11 +143,27 @@ function proofAnswer(selectedAnswer){
     let rightAnswer = questions[0]['right_answer']; // holt das erste element des jsons und davon den wert im string "right_answer"
     console.log('right answer', rightAnswer);
 
+    let idOfRightAnswer = `answer_${rightAnswer}`;
+
     if (selectedNumber === rightAnswer) {
-        document.getElementById(selectedAnswer).classList.add('bg-success');
+        document.getElementById(selectedAnswer).parentNode.classList.add('bg-success'); // .parentNode spricht das übergeordnete element an
         alert('youre right');
     } else {
         alert('youre wrong');
-        document.getElementById(selectedAnswer).classList.add('bg-danger');
+        document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
+    document.getElementById('back_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
+    document.getElementById('for_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
+
+}
+function moveBackward(){
+    console.log('rückwärts')
+    currentQuestion--;
+    startQuestions();
+}
+function moveForward(){
+    console.log('vorwärts')
+    currentQuestion++;
+    startQuestions();
 }

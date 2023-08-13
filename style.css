@@ -150,5 +150,24 @@ body {
     font-family: 'Rubik', sans-serif;
     font-weight: 400 !important;
 }
+.bg-success, .bg-danger{
+    color: white;
+}
 
 /*--------------------------Question page---------------------------*/
+
+/*--------------------------Buttons---------------------------*/
+#back_and_for{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px;
+}
+#back_and_for img:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+#back_and_for img{
+    border-radius: 15px;
+
+}
+/*--------------------------Buttons---------------------------*/
