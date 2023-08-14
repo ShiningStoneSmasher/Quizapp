@@ -95,6 +95,10 @@ function init() {
     `;
 }
 function startQuestions() {
+    
+    if (currentQuestion >= questions.length) {
+        showEndCard();
+    } else {
 
     document.getElementById('content_for_quest').style.backgroundImage = "none";
 
@@ -135,6 +139,7 @@ function startQuestions() {
     document.getElementById('answer_4').innerHTML = showQuestion['answer_4'];
 
 }
+}
 
 function proofAnswer(selectedAnswer){
     let selectedNumber = +selectedAnswer.slice(-1); // holt das letzte element aus dem string und gibt es aus zahl aus
@@ -166,4 +171,9 @@ function moveForward(){
     console.log('vorwärts')
     currentQuestion++;
     startQuestions();
+}
+function showEndCard(){
+    document.getElementById('content_for_quest').innerHTML = /*html*/ `
+        
+    `;
 }
