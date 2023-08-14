@@ -173,7 +173,19 @@ function moveForward(){
     startQuestions();
 }
 function showEndCard(){
+
+    let numberOfQuestions = questions.length;
+    
     document.getElementById('content_for_quest').innerHTML = /*html*/ `
-        
+    <div id="main-encard">
+        <div id="stuff-endcard">
+            <img  src="./img/brain-result.png" alt="brain-logo">
+            <h2 id="headline-endcard">COMPLETE PROGRAMMER-QUIZ</h2>
+            <span id="your-score">YOUR SCORE XX/${numberOfQuestions}</span>
+            <button id="share-your-result">SHARE</button>
+            <button id="play-again">REPLAY</button>
+        </div>    
+        <img src="./img/tropy.png" alt="trophäe">
+    </div>    
     `;
 }
