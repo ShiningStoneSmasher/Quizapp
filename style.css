@@ -1,6 +1,7 @@
 body {
     background-color: rgb(254, 250, 239);
     font-family: 'Rubik', sans-serif;
+    position: relative;
     margin-right: 0 !important;
     padding: 0 !important;
 }
@@ -171,3 +172,33 @@ body {
 
 }
 /*--------------------------Buttons---------------------------*/
+/*--------------------------endcard---------------------------*/
+#main-encard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#stuff-endcard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+
+}
+#stuff-endcard img{
+     height: 140px;
+     width: 140px;
+}
+#your-score{
+    color: orange;
+}
+#headline-endcard{
+    text-align: center;
+}
+#trophy-img{
+    position: absolute;
+    right: 0;
+}
+/*--------------------------endcard---------------------------*/

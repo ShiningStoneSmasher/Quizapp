@@ -81,7 +81,7 @@ let questions = [
     }
 ];
 let currentQuestion = 0;
-let rightAnswers = [];
+let rightAnswers = 0;
 
 function init() {
 
@@ -152,9 +152,9 @@ function proofAnswer(selectedAnswer){
 
     if (selectedNumber === rightAnswer) {
         document.getElementById(selectedAnswer).parentNode.classList.add('bg-success'); // .parentNode spricht das übergeordnete element an
-        alert('youre right');
+        rightAnswers++;
     } else {
-        alert('youre wrong');
+
         document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
@@ -180,12 +180,18 @@ function showEndCard(){
     <div id="main-encard">
         <div id="stuff-endcard">
             <img  src="./img/brain-result.png" alt="brain-logo">
-            <h2 id="headline-endcard">COMPLETE PROGRAMMER-QUIZ</h2>
-            <span id="your-score">YOUR SCORE XX/${numberOfQuestions}</span>
+            <h2 id="headline-endcard">COMPLETE<br>PROGRAMMER-QUIZ</h2>
+            <span id="your-score">YOUR SCORE ${rightAnswers}/${numberOfQuestions}</span>
             <button id="share-your-result">SHARE</button>
-            <button id="play-again">REPLAY</button>
+            <button onclick="reStartQuestions()" id="play-again">REPLAY</button>
         </div>    
-        <img src="./img/tropy.png" alt="trophäe">
+        <img id="trophy-img" src="./img/tropy.png" alt="trophäe">
     </div>    
     `;
+}
+function reStartQuestions(){
+
+    currentQuestion = 0;
+    rightAnswers = 0;
+    startQuestions();
 }
