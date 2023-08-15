@@ -83,25 +83,24 @@ let questions = [
 let currentQuestion = 0;
 let rightAnswers = 0;
 
-function init() {
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_WRONG = new Audio('audio/wrong.mp3');
 
+function init() {
     let welcome = document.getElementById('content_for_quest');
 
     welcome.innerHTML = /*html*/ `
-
         <span id="welcome_line">Welcome to<br>The Awesome Programmer-Quiz</span>
         <span id="ready_line">Ready for the Challenge?</span>
         <button id="start_button" onclick="startQuestions()">START NOW <span>></span></button>
     `;
 }
-function startQuestions() {
-    
+function startQuestions() {    
     if (currentQuestion >= questions.length) {
         showEndCard();
     } else {
 
     document.getElementById('content_for_quest').style.backgroundImage = "none";
-
     document.getElementById('content_for_quest').innerHTML = /*html*/ `
         <span id="question" class="questions"></span>
         <div id="answers">
@@ -137,30 +136,30 @@ function startQuestions() {
     document.getElementById('answer_2').innerHTML = showQuestion['answer_2'];
     document.getElementById('answer_3').innerHTML = showQuestion['answer_3'];
     document.getElementById('answer_4').innerHTML = showQuestion['answer_4'];
-
 }
 }
-
 function proofAnswer(selectedAnswer){
     let selectedNumber = +selectedAnswer.slice(-1); // holt das letzte element aus dem string und gibt es aus zahl aus
-    console.log('selectedNumber', selectedNumber);
-
-    let rightAnswer = questions[0]['right_answer']; // holt das erste element des jsons und davon den wert im string "right_answer"
-    console.log('right answer', rightAnswer);
-
+    let rightAnswer = questions[0]['right_answer']; // holt das erste element des jsons und davon den wert im string "right_answer"    
     let idOfRightAnswer = `answer_${rightAnswer}`;
 
     if (selectedNumber === rightAnswer) {
-        document.getElementById(selectedAnswer).parentNode.classList.add('bg-success'); // .parentNode spricht das übergeordnete element an
-        rightAnswers++;
+        selectedRightAnswer();
     } else {
-
-        document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        selectedWrongAnswer();
     }
     document.getElementById('back_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
     document.getElementById('for_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
-
+}
+function selectedWrongAnswer(){
+    document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    AUDIO_WRONG.play();
+}
+function selectedRightAnswer(){
+    document.getElementById(selectedAnswer).parentNode.classList.add('bg-success'); // .parentNode spricht das übergeordnete element an
+    AUDIO_SUCCESS.play();
+    rightAnswers++;
 }
 function moveBackward(){
     console.log('rückwärts')
@@ -173,7 +172,6 @@ function moveForward(){
     startQuestions();
 }
 function showEndCard(){
-
     let numberOfQuestions = questions.length;
     
     document.getElementById('content_for_quest').innerHTML = /*html*/ `
@@ -190,7 +188,6 @@ function showEndCard(){
     `;
 }
 function reStartQuestions(){
-
     currentQuestion = 0;
     rightAnswers = 0;
     startQuestions();
