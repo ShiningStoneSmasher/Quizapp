@@ -144,19 +144,19 @@ function proofAnswer(selectedAnswer){
     let idOfRightAnswer = `answer_${rightAnswer}`;
 
     if (selectedNumber === rightAnswer) {
-        selectedRightAnswer();
+        selectedRightAnswer(selectedAnswer, idOfRightAnswer);
     } else {
-        selectedWrongAnswer();
+        selectedWrongAnswer(selectedAnswer, idOfRightAnswer);
     }
     document.getElementById('back_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
     document.getElementById('for_button').style.pointerEvents = 'auto'; // aktiviert die "button" funktion
 }
-function selectedWrongAnswer(){
+function selectedWrongAnswer(selectedAnswer, idOfRightAnswer){
     document.getElementById(selectedAnswer).parentNode.classList.add('bg-danger');
     document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     AUDIO_WRONG.play();
 }
-function selectedRightAnswer(){
+function selectedRightAnswer(selectedAnswer){
     document.getElementById(selectedAnswer).parentNode.classList.add('bg-success'); // .parentNode spricht das übergeordnete element an
     AUDIO_SUCCESS.play();
     rightAnswers++;
